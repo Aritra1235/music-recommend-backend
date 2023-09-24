@@ -14,6 +14,7 @@ const getSongs = async (recommendedFeatures) => {
     console.log(songsURL)
 
     const token = process.env.SPOTIFY_API_TOKEN;
+    console.log(token)
 
     const headers = {
         'Authorization': `Bearer ${token}`
