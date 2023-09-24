@@ -10,10 +10,17 @@ import { getSongs } from "./services/getSongs.js";
 
 
 const app = express();
-const PORT = 80
+const PORT = 8080
+
+// Allow requests from your frontend domain (replace with your actual domain)
+const corsOptions = {
+    origin: 'https://music-recommender.pages.dev',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    optionsSuccessStatus: 204,
+};
 
 // Use the cors middleware
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
 let songIDs
