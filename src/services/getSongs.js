@@ -12,7 +12,7 @@ const getSongs = async (recommendedFeatures) => {
 
     console.log(songsURL)
 
-    const token = 'BQAsuIzdzbIjYGqcZWRs-w38hVn-UZLEeaGlwmMMMNmmWTfDZ53KYDc0Xc-QtzuSXmdIepZsCxTBZsqx_2PbtnKcqk_uRNkVtQTEoVIcZbxBkdNbaH8';
+    const token = 'BQC-KQJzQypujMM7dJ9V-HP3M0xjrZOJlV1bux5hEoDYw9IMCht0g4GBnqqZ0EvcaKiW260z0MyDFzTpbRil4xl98016_QGoadSqvA8IVpuIm_uRyFQ';
 
     const headers = {
         'Authorization': `Bearer ${token}`
