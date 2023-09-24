@@ -10,7 +10,7 @@ import { getSongs } from "./services/getSongs.js";
 
 
 const app = express();
-const PORT = 3500
+const PORT = 80
 
 // Use the cors middleware
 app.use(cors());
@@ -28,7 +28,7 @@ const getFeatures = async () => {
 }
 
 // For testing purposes
-app.post('/recommend', (req, res) => {
+app.post('/api', (req, res) => {
     const song1link = req.body.song1;
     const song2link = req.body.song2;
 
