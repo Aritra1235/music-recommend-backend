@@ -8,7 +8,7 @@ const getSongFeatures = async (songID1, songID2) => {
     const featureURL = `https://api.spotify.com/v1/audio-features?ids=${songID1},${songID2}`;
     const artistURL = `https://api.spotify.com/v1/tracks?ids=${songID1},${songID2}`
 
-    const token = process.env.SPOTIFY_API_TOKEN;
+    const token = 'BQAsuIzdzbIjYGqcZWRs-w38hVn-UZLEeaGlwmMMMNmmWTfDZ53KYDc0Xc-QtzuSXmdIepZsCxTBZsqx_2PbtnKcqk_uRNkVtQTEoVIcZbxBkdNbaH8';
 
     const headers = {
         'Authorization': `Bearer ${token}`
