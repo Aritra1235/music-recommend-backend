@@ -1,3 +1,7 @@
+import dotenv from 'dotenv';
+// Load environment variables from .env file
+dotenv.config();
+
 const getSongs = async (recommendedFeatures) => {
 
     const artistID1 = recommendedFeatures.artistID1
@@ -8,7 +12,7 @@ const getSongs = async (recommendedFeatures) => {
 
     console.log(songsURL)
 
-    const token = 'BQAsuIzdzbIjYGqcZWRs-w38hVn-UZLEeaGlwmMMMNmmWTfDZ53KYDc0Xc-QtzuSXmdIepZsCxTBZsqx_2PbtnKcqk_uRNkVtQTEoVIcZbxBkdNbaH8';
+    const token = process.env.SPOTIFY_API_TOKEN;
 
     const headers = {
         'Authorization': `Bearer ${token}`
