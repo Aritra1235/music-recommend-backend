@@ -20,6 +20,7 @@ let songID2
 let audioFeatures
 let recommendedFeatures
 let songsList
+let recommendations = []
 
 // Allow requests from your frontend domain (replace with your actual domain)
 const corsOptions = {
@@ -93,9 +94,11 @@ app.post('/api', (req, res) => {
 
         console.log(songsList);
         for (let i = 0; i < 10; i++) {
-            console.log("Recommendation", i+1 + ": " , songsList.tracks[i].name, "By", songsList.tracks[i].artists[0].name)
-
+            const recommendation = `Recommendation ${i + 1}: ${songsList.tracks[i].name} By ${songsList.tracks[i].artists[0].name}`;
+            recommendations.push(recommendation); // Push the recommendation to the array
         }
+
+        console.log(recommendations)
 
 
 
