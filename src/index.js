@@ -46,7 +46,7 @@ function logging() {
     // Create a timestamp with the current date and time
     const timestamp = new Date().toLocaleString();
     // Create a log string that includes the timestamp and the data
-    const logString = `${timestamp}\nSong ID 1: ${songID1}\nSong ID 2: ${songID2}\nAudio Features: ${JSON.stringify(audioFeatures, null, 2)}\nRecommended Features: ${JSON.stringify(recommendedFeatures, null, 2)}\nSongs List: ${JSON.stringify(songsList, null, 2)}\n`;
+    const logString = `${timestamp}\nSong ID 1: ${songID1}\nSong ID 2: ${songID2}\nAudio Features: ${JSON.stringify(audioFeatures, null, 2)}\nRecommended Features: ${JSON.stringify(recommendedFeatures, null, 2)}\nSongs List: ${recommendations}\n`;
 
 
     // Append the log string to the specified file
