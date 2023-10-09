@@ -104,7 +104,7 @@ app.post('/api', (req, res) => {
 
         }
 
-        logging()
+
 
         res.json({
             songs: [
@@ -145,6 +145,8 @@ app.post('/api', (req, res) => {
             ]
 
         });
+
+        logging()
 
 
     });
