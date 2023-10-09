@@ -8,6 +8,9 @@ import { getRecomendationFeatures } from './services/getRecomendationFeatures.js
 import { getSongs } from "./services/getSongs.js";
 import fs from 'fs'
 import path from 'path'
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
 
 
 
@@ -40,6 +43,9 @@ const getFeatures = async () => {
 // logging
 
 function logging() {
+    const __filename = fileURLToPath(import.meta.url);
+    const __dirname = dirname(__filename);
+
     const fileName = 'logs.log';
     // Create a timestamp with the current date and time
     const timestamp = new Date().toLocaleString();
