@@ -98,6 +98,8 @@ app.post('/api', (req, res) => {
 
         }
 
+        logging()
+
         res.json({
             songs: [
                 {song1: songsList.tracks[0].name},
