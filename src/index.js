@@ -22,6 +22,7 @@ let songID1
 let songID2
 let audioFeatures
 let recommendedFeatures
+let songsList
 
 // Allow requests from your frontend domain (replace with your actual domain)
 const corsOptions = {
@@ -83,7 +84,7 @@ app.post('/api', (req, res) => {
         recommendedFeatures['artistID1'] = audioFeatures.artistID1
         recommendedFeatures['artistID2'] = audioFeatures.artistID2
         console.log(recommendedFeatures)
-        const songsList = getSongs(recommendedFeatures)
+        songsList = getSongs(recommendedFeatures)
         console.log(songsList)
 
     })
