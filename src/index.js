@@ -79,7 +79,6 @@ app.post('/api', (req, res) => {
         res.json({
             songs: [
                 {song1: songsList.tracks[0].name},
-
                 {song2: songsList.tracks[1].name},
                 {song3: songsList.tracks[2].name},
                 {song4: songsList.tracks[3].name},
@@ -101,6 +100,18 @@ app.post('/api', (req, res) => {
                 {artist8: songsList.tracks[7].artists[0].name},
                 {artist9: songsList.tracks[8].artists[0].name},
                 {artist10: songsList.tracks[9].artists[0].name}
+            ],
+            ids: [
+                {id1: songsList.tracks[0].id},
+                {id2: songsList.tracks[1].id},
+                {id3: songsList.tracks[2].id},
+                {id4: songsList.tracks[3].id},
+                {id5: songsList.tracks[4].id},
+                {id6: songsList.tracks[5].id},
+                {id7: songsList.tracks[6].id},
+                {id8: songsList.tracks[7].id},
+                {id9: songsList.tracks[8].id},
+                {id10: songsList.tracks[9].id},
             ]
 
         });
