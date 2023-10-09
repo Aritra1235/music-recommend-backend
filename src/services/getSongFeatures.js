@@ -1,7 +1,7 @@
 // getSongFeatures.js
 import fs from 'fs'
 // Load environment variables from .env file
-const filePath = '/src/services/token.txt';
+const filePath = './src/services/token.txt';
 const token = fs.readFileSync(filePath, 'utf8');
 
 const getSongFeatures = async (songID1, songID2) => {

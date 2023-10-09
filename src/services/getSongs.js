@@ -1,7 +1,7 @@
 import fs from 'fs'
 
 // Load environment variables from .env file
-const filePath = 'token.txt';
+const filePath = './src/services/token.txt';
 const token = fs.readFileSync(filePath, 'utf8');
 
 const getSongs = async (recommendedFeatures) => {
