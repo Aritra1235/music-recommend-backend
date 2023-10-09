@@ -1,7 +1,7 @@
-import dotenv from 'dotenv';
+import fs from 'fs'
 
 // Load environment variables from .env file
-dotenv.config({ path: '../../.env' });
+const filePath = 'token.txt';
 
 const getSongs = async (recommendedFeatures) => {
 
@@ -13,7 +13,7 @@ const getSongs = async (recommendedFeatures) => {
 
     console.log(songsURL)
 
-    const token = process.env.SPOTIFY_API_TOKEN;
+    const token = fs.readFileSync(filePath, 'utf8');
     console.log(token)
 
     const headers = {

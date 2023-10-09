@@ -1,14 +1,15 @@
 // getSongFeatures.js
-import dotenv from 'dotenv';
+import fs from 'fs'
 // Load environment variables from .env file
-dotenv.config({ path: '../../.env' });
-
+const filePath = 'token.txt';
+const token = fs.readFileSync(filePath, 'utf8');
+console.log(token)
 const getSongFeatures = async (songID1, songID2) => {
 
     const featureURL = `https://api.spotify.com/v1/audio-features?ids=${songID1},${songID2}`;
     const artistURL = `https://api.spotify.com/v1/tracks?ids=${songID1},${songID2}`
 
-    const token = process.env.SPOTIFY_API_TOKEN;
+    const token = fs.readFileSync(filePath, 'utf8');
     console.log(token)
 
     const headers = {
