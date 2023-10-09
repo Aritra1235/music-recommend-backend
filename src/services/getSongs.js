@@ -2,6 +2,7 @@ import fs from 'fs'
 
 // Load environment variables from .env file
 const filePath = 'token.txt';
+const token = fs.readFileSync(filePath, 'utf8');
 
 const getSongs = async (recommendedFeatures) => {
 
@@ -13,7 +14,6 @@ const getSongs = async (recommendedFeatures) => {
 
     console.log(songsURL)
 
-    const token = fs.readFileSync(filePath, 'utf8');
     console.log(token)
 
     const headers = {

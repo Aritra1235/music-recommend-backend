@@ -6,11 +6,19 @@ import {getSongID} from "./services/getSongID.js";
 import {getSongFeatures} from "./services/getSongFeatures.js";
 import { getRecomendationFeatures } from './services/getRecomendationFeatures.js'
 import { getSongs } from "./services/getSongs.js";
+import fs from 'fs'
+import path from 'path'
 
 
 
 const app = express();
 const PORT = 8080
+
+let songIDs
+let songID1
+let songID2
+let audioFeatures
+let recommendedFeatures
 
 // Allow requests from your frontend domain (replace with your actual domain)
 const corsOptions = {
@@ -23,15 +31,29 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
-let songIDs
-let songID1
-let songID2
-let audioFeatures
-let recommendedFeatures
-
 const getFeatures = async () => {
     audioFeatures = await getSongFeatures(songID1, songID2)
     console.log(audioFeatures)
+}
+
+
+// logging
+
+function logging() {
+    const fileName = 'logs.log';
+    // Create a timestamp with the current date and time
+    const timestamp = new Date().toLocaleString();
+    // Define the file path two folders back
+    const filePath = path.join(__dirname, '..', '..', fileName);
+    // Create a log string that includes the timestamp and the data
+    const logString = `${timestamp}\nSong ID 1: ${songID1}\nSong ID 2: ${songID2}\nAudio Features: ${JSON.stringify(audioFeatures, null, 2)}\nRecommended Features: ${JSON.stringify(recommendedFeatures, null, 2)}\nSongs List: ${JSON.stringify(songsList, null, 2)}\n`;
+
+
+    // Append the log string to the specified file
+    fs.appendFileSync(filePath, logString);
+
+    console.log('Data has been logged to the file and console.');
+
 }
 
 // For testing purposes
